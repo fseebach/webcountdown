@@ -23,8 +23,6 @@ export class CountdownComponent implements OnInit {
   }
 
   private refresh(){
-    
-    setTimeout(this.refresh,1000);
   }
 
   ngOnInit() {
