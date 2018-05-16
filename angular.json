@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "date-time-countdown": {
+      "root": "projects/date-time-countdown",
+      "sourceRoot": "projects/date-time-countdown/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/date-time-countdown/tsconfig.lib.json",
+            "project": "projects/date-time-countdown/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/date-time-countdown/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/date-time-countdown/src/test.ts",
+            "tsConfig": "projects/date-time-countdown/tsconfig.spec.json",
+            "karmaConfig": "projects/date-time-countdown/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/date-time-countdown/tsconfig.lib.json",
+              "projects/date-time-countdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "webcountdown"
